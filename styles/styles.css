@@ -14,3 +14,21 @@ body {
 * {
   font-family: 'lato', sans-serif, Geneva, Tahoma;
 }
+
+h1 {
+  margin: 10px;
+}
+
+input[type=text] {
+  display: flex;
+  flex-direction: column;
+  color: red;
+  padding: 2px;
+  width: 25%;
+  margin: 10px;
+}
+
+.btn {
+  margin: 10px;
+  padding: 5px;
+}
