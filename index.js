@@ -13,6 +13,8 @@ function Books(author, bookName, pages, status) {
 
 const tableBody = document.querySelector('.tbody');
 const form = document.querySelector('.form-body');
+form.addEventListener('submit', renderFunction);
+
 console.log(form);
 
 
@@ -36,6 +38,21 @@ function displayBooks() {
 }
 console.log(displayBooks());
 
+let newBooks = { author: 'james alen', bookName: 'As a man thinketh', pages: 789, status: 'read' };
+function renderFunction(e) {
+	e.preventDefault();
+	let elements = e.target.elements;
+	// console.log(elements['title'].value);
+	form.elements['title']
+	newBooks.author = elements.author.value;
+	newBooks.status = elements.books.value;
+	newBooks.bookName = elements['title'].value;
+	libraryData.unshift(newBooks)
+	tableBody.innerHTML = '';
+	displayBooks()
+	console.log(libraryData)
+	//console.log(newBooks);
+}
 
 const book1 = new Books('john doe', 'I love to play football');
 const book2 = new Books('richard brandson', 'the way we understand how to make money', '250 pages', 'have not read this book yet');
@@ -53,3 +70,7 @@ console.log(book2.bookInfo());
 // console.log(input);
 
 // const formBody = document.querySelector('input');
+
+// for (book in newBooks){
+
+// }
