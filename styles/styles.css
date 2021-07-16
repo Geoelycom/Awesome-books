@@ -21,8 +21,7 @@ h1 {
 
 input[type=text] {
   display: flex;
-  flex-direction: column;
-  color: red;
+  flex-direction: row;
   padding: 2px;
   width: 25%;
   margin: 10px;
@@ -31,4 +30,8 @@ input[type=text] {
 .btn {
   margin: 10px;
   padding: 5px;
+}
+
+form {
+  display: flex;
 }
