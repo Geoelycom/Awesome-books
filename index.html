@@ -14,16 +14,38 @@
 </head>
 
 <body>
-	<h1>Awesome books</h1>
-	<div class="title">
-		
-	</div>
-	<hr>
-	<div class="form-box">
-		<input type="text" placeholder="Title">
-		<input type="text" placeholder="Author">
-		<button type="submit" class="btn">Add</button>
-	</div>
+	<section class="form-box">
+		<form class="form-body">
+			<input type="text" placeholder="Title">
+			<input type="text" placeholder="Author">
+			<!-- <label for="read-status">Read</label> -->
+			<select name="books" title="books">
+				<option value="read">Read</option>
+				<option value="not-read">Not-Read</option>
+			</select>
+			<button type="submit" class="btn">Add</button>
+		</form>
+	</section>
+
+	<section class="dynamic-form">
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>author</th>
+					<th>status</th>
+				</tr>
+			</thead>
+			<tbody class="tbody">
+				<!-- <tr>
+					<td>book 1</td>
+					<td>emir</td>
+					<td>read</td>
+				</tr> -->
+			</tbody>
+		</table>
+	</section>
+
 	<script src="index.js"></script>
 </body>
 
