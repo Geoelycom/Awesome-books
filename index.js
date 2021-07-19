@@ -1,4 +1,3 @@
-//console.log('hello world');
 function Books(author, bookName, pages, status) {
 	this.author = author;
 	this.bookName = bookName;
@@ -7,15 +6,11 @@ function Books(author, bookName, pages, status) {
 	this.bookInfo = function () {
 		return `the ${bookName} is written by ${author} it contains ${pages} and i ${status} `;
 	}
-	// bookInfo();
 }
-//Books.bookInfo();
 
 const tableBody = document.querySelector('.tbody');
 const form = document.querySelector('.form-body');
 form.addEventListener('submit', renderFunction);
-
-console.log(form);
 
 
 const libraryData = [
@@ -27,49 +22,47 @@ const libraryData = [
 ]
 
 function displayBooks() {
+	let key = 0;
 	libraryData.forEach(books => {
-		tableBody.innerHTML += `<tr>
+		tableBody.innerHTML += `<tr id="${key}">
 		<td>${books.bookName}</td>
 		<td>${books.author}</td>
 		<td>${books.status}</td>
+		<td><button class="del">Delete</button></td>
 	</tr> `
-		console.log(books)
+		key++;
+		const deleteItem = document.querySelectorAll('.del')
+		console.log(deleteItem)
+		deleteItem.forEach(item => {
+			item.addEventListener('click', deleteBook);
+		})
+
 	})
 }
-console.log(displayBooks());
+displayBooks();
 
-let newBooks = { author: 'james alen', bookName: 'As a man thinketh', pages: 789, status: 'read' };
 function renderFunction(e) {
+	let newBooks = {};
 	e.preventDefault();
 	let elements = e.target.elements;
-	form.elements.title
+	form.elements.title;
 	newBooks.author = elements.author.value;
 	newBooks.status = elements.books.value;
-	newBooks.bookName = elements['title'].value;
+	newBooks.bookName = elements.title.value;
 	libraryData.unshift(newBooks)
 	tableBody.innerHTML = '';
 	displayBooks()
-	console.log(libraryData)
-	//console.log(newBooks);
+}
+
+
+function deleteBook(e) {
+	libraryData.splice(e.target.parentElement.parentElement.id, 1);
+	tableBody.innerHTML = '';
+	displayBooks()
 }
 
 const book1 = new Books('john doe', 'I love to play football');
 const book2 = new Books('richard brandson', 'the way we understand how to make money', '250 pages', 'have not read this book yet');
 book1.bookInfo();
-console.log(book2.bookInfo());
 
 
-// const input = document.querySelector('.title');
-
-// const contentWrapper = document.createElement('p')
-// const button = document.createElement('button');
-// button.innerText = 'remove item';
-// contentWrapper.appendChild(button);
-// input.appendChild(contentWrapper);
-// console.log(input);
-
-// const formBody = document.querySelector('input');
-
-// for (book in newBooks){
-
-// }
