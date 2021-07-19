@@ -1,12 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+		integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+	<link href="styles/styles.css" rel="stylesheet">
 	<title>Book-library</title>
 </head>
+
 <body>
-	
+	<section class="form-box">
+		<form class="form-body">
+			<input type="text" placeholder="Title" name="title">
+			<input type="text" placeholder="Author" name="author">
+			<!-- <label for="read-status">Read</label> -->
+			<select name="books" title="books">
+				<option value="read">Read</option>
+				<option value="not-read">Not-Read</option>
+			</select>
+			<button type="submit" class="btn">Add</button>
+		</form>
+	</section>
+
+	<section class="dynamic-form">
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>author</th>
+					<th>status</th>
+				</tr>
+			</thead>
+			<tbody class="tbody">
+				<!-- <tr>
+					<td>book 1</td>
+					<td>emir</td>
+					<td>read</td>
+				</tr> -->
+			</tbody>
+		</table>
+	</section>
+
+	<script src="index.js"></script>
 </body>
+
 </html>
