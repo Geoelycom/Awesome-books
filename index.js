@@ -42,8 +42,7 @@ let newBooks = { author: 'james alen', bookName: 'As a man thinketh', pages: 789
 function renderFunction(e) {
 	e.preventDefault();
 	let elements = e.target.elements;
-	// console.log(elements['title'].value);
-	form.elements['title']
+	form.elements.title
 	newBooks.author = elements.author.value;
 	newBooks.status = elements.books.value;
 	newBooks.bookName = elements['title'].value;
