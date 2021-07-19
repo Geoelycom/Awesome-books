@@ -12,7 +12,7 @@ This project is done to teach me more about Javascript objects. how to manipulat
 
 ## Live Demo 👀
 
-[Live Demo Link]()
+[Live Demo Link](https://geoelycom.github.io/Awesome-books/)
 
 ### Install
 
