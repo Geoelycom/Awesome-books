@@ -16,13 +16,22 @@
 <body>
 	<section class="form-box">
 		<form class="form-body">
-			<input type="text" placeholder="Title" name="title">
-			<input type="text" placeholder="Author" name="author">
+			<div class="bookName">
+				<label for="book">Book Name</label>
+				<input type="text" placeholder="Title" name="title">
+			</div>
+			<div class="author">
+				<label for="Author">Author</label>
+				<input type="text" placeholder="Author" name="author">
+			</div>
 			<!-- <label for="read-status">Read</label> -->
-			<select name="books" title="books">
-				<option value="read">Read</option>
-				<option value="not-read">Not-Read</option>
-			</select>
+			<div class="status">
+				<label for="Author">Status</label>
+				<select name="books" title="books" class="opt">
+					<option value="read">Read</option>
+					<option value="not-read">Not-Read</option>
+				</select>
+			</div>
 			<button type="submit" class="btn">Add</button>
 		</form>
 	</section>
@@ -34,7 +43,7 @@
 					<th>Name</th>
 					<th>author</th>
 					<th>status</th>
-					<th>Delete</th>
+					<!-- <th>Delete</th> -->
 				</tr>
 			</thead>
 			<tbody class="tbody">
