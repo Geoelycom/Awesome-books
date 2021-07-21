@@ -19,19 +19,15 @@ h1 {
   margin: 10px;
 }
 
-input[type=text] {
-  display: flex;
-  flex-direction: row;
-  padding: 2px;
-  width: 25%;
-  margin: 10px;
+thead,
+tr {
+  text-align: center;
 }
 
-.btn {
-  margin: 10px;
-  padding: 5px;
-}
-
-form {
+.main-content {
   display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  font-family: 'lato', sans-serif;
 }
