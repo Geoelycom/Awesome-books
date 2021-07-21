@@ -23,3 +23,11 @@ thead,
 tr {
   text-align: center;
 }
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  font-family: 'lato', sans-serif;
+}
