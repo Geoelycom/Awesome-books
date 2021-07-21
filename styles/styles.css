@@ -18,23 +18,3 @@ body {
 h1 {
   margin: 10px;
 }
-
-input[type=text] {
-  display: flex;
-  flex-direction: row;
-  padding: 2px;
-  width: 80%;
-  margin: 10px;
-}
-
-form {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-  text-align: center;
-}
-
-.opt {
-  display: block;
-  margin-top: 10px;
-}
