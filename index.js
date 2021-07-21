@@ -28,7 +28,7 @@ function displayBooks() {
 		<td>${books.bookName}</td>
 		<td>${books.author}</td>
 		<td>${books.status}</td>
-		<td><button class="del">Delete</button></td>
+		<td><button class="del btn-danger">Delete</button></td>
 	</tr> `
 		key++;
 		const deleteItem = document.querySelectorAll('.del')
