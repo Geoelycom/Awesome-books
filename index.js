@@ -1,3 +1,4 @@
+//Creating the Book object
 function Books(author, bookName, pages, status) {
 	this.author = author;
 	this.bookName = bookName;
@@ -12,7 +13,7 @@ const tableBody = document.querySelector('.tbody');
 const form = document.querySelector('.form-body');
 form.addEventListener('submit', renderFunction);
 
-
+//Datastructure for storing available books in the UI
 const libraryData = [
 	{ author: 'james alen', bookName: 'As a man thinketh', pages: 789, status: 'read' },
 	{ author: 'markle bloom', bookName: 'Love on the road', pages: 500, status: 'not read' },
@@ -21,6 +22,7 @@ const libraryData = [
 
 ]
 
+//Function that creates the Books when a user inputs its in the ui
 function displayBooks() {
 	let key = 0;
 	libraryData.forEach(books => {
@@ -41,6 +43,7 @@ function displayBooks() {
 }
 displayBooks();
 
+//Create a function that render's book to the UI
 function renderFunction(e) {
 	let newBooks = {};
 	e.preventDefault();
@@ -54,7 +57,7 @@ function renderFunction(e) {
 	displayBooks()
 }
 
-
+//Delete Book
 function deleteBook(e) {
 	libraryData.splice(e.target.parentElement.parentElement.id, 1);
 	tableBody.innerHTML = '';
