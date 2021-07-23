@@ -4,10 +4,12 @@ function Books(author, bookName, pages, status) {
 	this.bookName = bookName;
 	this.pages = pages;
 	this.status = status;
-	this.bookInfo = function () {
-		return `the ${bookName} is written by ${author} it contains ${pages} and i ${status} `;
-	}
 }
+
+Books.prototype.bookInfo = function () {
+	return `${this.author} is the author who wrote ${this.bookName} it contains ${this.pages} and i ${this.status} `;
+}
+
 
 const tableBody = document.querySelector('.tbody');
 const form = document.querySelector('.form-body');
@@ -34,7 +36,6 @@ function displayBooks() {
 	</tr> `
 		key++;
 		const deleteItem = document.querySelectorAll('.del')
-		console.log(deleteItem)
 		deleteItem.forEach(item => {
 			item.addEventListener('click', deleteBook);
 		})
@@ -66,6 +67,6 @@ function deleteBook(e) {
 
 const book1 = new Books('john doe', 'I love to play football');
 const book2 = new Books('richard brandson', 'the way we understand how to make money', '250 pages', 'have not read this book yet');
-book1.bookInfo();
-
+console.log(book2.bookInfo());
+console.log(book1);
 
