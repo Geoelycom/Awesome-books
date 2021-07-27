@@ -15,9 +15,9 @@ const tableBody = document.querySelector('.tbody');
 const form = document.querySelector('.form-body');
 form.addEventListener('submit', renderFunction);
 
-//Datastructure for storing available books in the UI
-const libraryData = [
-	 { author: 'james alen', bookName: 'As a man thinketh', pages: 789, status: 'read' },
+//Data structure for storing available books in the UI
+let libraryData = [
+	{ author: 'james alen', bookName: 'As a man thinketh', pages: 789, status: 'read' },
 	{ author: 'markle bloom', bookName: 'Love on the road', pages: 500, status: 'not read' },
 	{ author: 'charles duhig', bookName: 'the power of habit', pages: 400, status: 'not read' },
 	{ author: 'sarah bloomberg', bookName: 'a tail of two cities', pages: 340, status: 'read' }
@@ -43,7 +43,7 @@ function displayBooks() {
 
 	})
 }
-displayBooks();
+
 
 //Create a function that render's book to the UI
 function renderFunction(e) {
@@ -55,6 +55,7 @@ function renderFunction(e) {
 	newBooks.status = elements.books.value;
 	newBooks.bookName = elements.title.value;
 	libraryData.unshift(newBooks)
+	console.log(libraryData)
 	saveData()
 	tableBody.innerHTML = '';
 	displayBooks()
@@ -63,22 +64,34 @@ function renderFunction(e) {
 //Delete Book
 function deleteBook(e) {
 	libraryData.splice(e.target.parentElement.parentElement.id, 1);
-	saveData()
 	tableBody.innerHTML = '';
+	saveData()
 	displayBooks()
+
 }
 
-// local storage
+// Set Books to local storage
 function saveData() {
 	localStorage.setItem('libraryData', JSON.stringify(libraryData))
 }
+
+function checkStorage() {
+	if (getItem()) {
+		libraryData = getItem()
+		displayBooks();
+	} else {
+		saveData()
+		displayBooks()
+	}
+}
+checkStorage()
+
 //recieve info saved in local storage
-function getItem(){
-	let item = localStorage.getItem('libraryData')
-	item = JSON.parse(item);
-	return item;
+function getItem() {
+	return JSON.parse(localStorage.getItem('libraryData'))
 }
 
 
 const book1 = new Books('john doe', 'I love to play football');
 const book2 = new Books('richard brandson', 'the way we understand how to make money', '250 pages', 'have not read this book yet');
+console.log(book2)
